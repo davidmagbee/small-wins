@@ -16,7 +16,11 @@ export function createAuthentication(options: {
   return betterAuth({
     baseURL: options.baseURL,
     secret: options.secret,
-    trustedOrigins: [options.baseURL],
+    // Retain sign-in for existing old-host guest sessions; cookies stay host-only.
+    // Trust this alias only for our renamed production app, never arbitrary callers.
+    trustedOrigins: options.baseURL === 'https://small-wins-davidmagbee.vercel.app'
+      ? [options.baseURL, 'https://assessment-todo.vercel.app']
+      : [options.baseURL],
     // Exercise the same CSRF protections in tests and production; Better Auth relaxes test defaults.
     advanced: { disableOriginCheck: false, disableCSRFCheck: false },
     database: drizzleAdapter(options.db, { provider: 'pg', schema, transaction: true }),

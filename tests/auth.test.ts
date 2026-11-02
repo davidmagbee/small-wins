@@ -55,3 +55,25 @@ test('wrong codes do not authenticate and exhaust the allowed attempts', async (
   }
   expect((await post('sign-in/email-otp', { email, otp: code })).status).toBeGreaterThanOrEqual(400)
 })
+
+// Both owned production hosts must work without weakening rejection of other origins.
+test('renamed production auth accepts its legacy alias and rejects unrelated origins', async () => {
+  const production = createAuthentication({
+    db, baseURL: 'https://small-wins-davidmagbee.vercel.app',
+    secret: 'test-only-secret-with-at-least-thirty-two-characters',
+    sendCode: async (message) => { delivered.push(message) },
+  })
+  let address = 10
+  for (const [origin, email, expected] of [
+    ['https://small-wins-davidmagbee.vercel.app', 'new-host@example.test', 200],
+    ['https://assessment-todo.vercel.app', 'legacy-host@example.test', 200],
+    ['https://untrusted.example', 'blocked-host@example.test', 403],
+  ] as const) {
+    const response = await production.handler(new Request(`${origin}/api/auth/email-otp/send-verification-otp`, {
+      method: 'POST', headers: { 'content-type': 'application/json', origin, cookie: 'guest=test-browser-cookie', 'x-forwarded-for': `192.0.2.${address++}` },
+      body: JSON.stringify({ email, type: 'sign-in' }),
+    }))
+    expect(response.status).toBe(expected)
+    expect(delivered.some(message => message.email === email)).toBe(expected === 200)
+  }
+})

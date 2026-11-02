@@ -196,3 +196,9 @@ Six atomic code commits pushed through d46ffa2. Vercel production deployment ass
 [Verified] gh repo view returns https://github.com/davidmagbee/small-wins and original repository ID R_kgDOUfRQFQ. Vercel update_project reports name small-wins on original project ID. list_project_domains confirms old production hostname retained. New hostname not yet selected or deployed.
 
 [User choice / verified configuration] Selected small-wins-davidmagbee.vercel.app; Vercel domain added and verified. Production BETTER_AUTH_URL updated to this origin; redeployment required. Host-only guest/account cookies cannot transfer to a different hostname.
+
+## Deployment prerequisite — 2026-11-02
+
+[Verified] Vercel blocked rename deployment dpl_AsDPS1zyp6t9mHTQ1fmNriFLCSuQ with BLOCKED_PACKAGE. Primary advisory https://github.com/TanStack/router/security/advisories/GHSA-qx66-fv34-fjm8 identifies react-start 1.168.60 / start-server-core 1.169.39 as patched. Pin react-start 1.168.60 and its matching react-router 1.170.41; no deployment-policy bypass.
+
+[Decision] Retain old hostname on the same patched deployment. Production auth explicitly trusts only the canonical new origin and existing owned legacy alias; other environments retain their single configured origin. Regression exercises both owned origins and rejects an unrelated origin. This preserves legacy browser guest access without copying cookies or changing ownership.
