@@ -4,7 +4,7 @@ A private to-do workspace built with TanStack Start, React, PostgreSQL and Bette
 
 Repository visibility: **public**. Successful edits collapse to their task summary; failed saves retain the editor and input.
 
-**Live:** [assessment-todo.vercel.app](https://assessment-todo.vercel.app) · [Repository](https://github.com/davidmagbee/assessment-todo) · [Codex-assisted planning summary](https://gist.github.com/davidmagbee/230e378be4f265ddb51c6adc078e93aa). 
+**Live:** [small-wins-davidmagbee.vercel.app](https://small-wins-davidmagbee.vercel.app) · [Repository](https://github.com/davidmagbee/small-wins) · [Codex-assisted planning summary](https://gist.github.com/davidmagbee/230e378be4f265ddb51c6adc078e93aa).
 
 ## Try it locally
 

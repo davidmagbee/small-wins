@@ -219,3 +219,11 @@ After the feature push, live keyboard verification motivated moving post-save fo
 ## Enhancement release verification — 2026-09-18
 
 Six atomic code commits pushed through d46ffa2. Vercel production deployment assessment-todo-c52yqk8kv-davidmagbees-projects.vercel.app reports Ready; canonical assessment-todo.vercel.app serves the new controls. Hosted compiled RPC verified metadata create/update/clear, normalized tag substring/exact/status filters, private/no-store SSR and cross-owner update/delete rejection. Hosted browser verified Alt/Option+F from the palette focuses search. Exact QA fixtures removed; local outside-shortcut preference restored off. GitHub visibility rechecked PUBLIC. README and public retrospective planning summary updated. No hosted inbox/account acceptance claim added.
+
+## Small Wins rename — 2026-11-02
+
+[Verified] GitHub repository renamed to davidmagbee/small-wins, preserving repository ID R_kgDOUfRQFQ; local origin updated. Existing Vercel project prj_IA4KanDBKxD1GlyoOBWnUj57V4fl renamed small-wins.
+
+[Verified limitation] Vercel rejected small-wins.vercel.app with 409 owned-on-other-team. Alternate URL awaiting user choice. Old assessment-todo.vercel.app remains attached. Preserve historical release evidence rather than rewriting past URLs. Local checkout path remains assessment-todo to preserve active workspace/tool paths.
+
+[User choice / verified configuration] Selected small-wins-davidmagbee.vercel.app; Vercel domain added and verified. Production BETTER_AUTH_URL updated to this origin; redeployment required. Host-only guest/account cookies cannot transfer to a different hostname.

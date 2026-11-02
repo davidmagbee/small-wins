@@ -128,3 +128,9 @@ After the feature push, live keyboard verification motivated moving post-save fo
 ## Enhancement release verification — 2026-09-18
 
 Six atomic code commits pushed through d46ffa2. Vercel production deployment assessment-todo-c52yqk8kv-davidmagbees-projects.vercel.app reports Ready; canonical assessment-todo.vercel.app serves the new controls. Hosted compiled RPC verified metadata create/update/clear, normalized tag substring/exact/status filters, private/no-store SSR and cross-owner update/delete rejection. Hosted browser verified Alt/Option+F from the palette focuses search. Exact QA fixtures removed; local outside-shortcut preference restored off. GitHub visibility rechecked PUBLIC. README and public retrospective planning summary updated. No hosted inbox/account acceptance claim added.
+
+## Rename request — 2026-11-02
+
+[Proven fact: user request] Rename GitHub repository and Vercel project/deployment URL to Small Wins; then update portfolio links. GitHub availability was user-reported.
+
+[User choice / verified configuration] Selected small-wins-davidmagbee.vercel.app; Vercel domain added and verified. Production BETTER_AUTH_URL updated to this origin; redeployment required. Host-only guest/account cookies cannot transfer to a different hostname.
